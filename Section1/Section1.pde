@@ -15,10 +15,11 @@ class Visualizer {
   Visualizer(float x, float y) {
     this.x = x;
     this.y = y;
-    values = new float[10];
-    speeds = new float[10];
+    int a = (int)random(40);
+    values = new float[a];
+    speeds = new float[a];
     for (int i = 0; i < values.length; i++) {
-      values[i] = random(-99, 99);
+      values[i] = random((rectHeight/-2)+1, (rectHeight/2)-1);
       speeds[i] = random(2);
     }
     rectWidth = (int)random(width - x);
