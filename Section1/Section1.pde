@@ -48,10 +48,16 @@ class Visualizer {
     //THESE ARE WRONG: They just illustrate how they could look
     for (int i = 0;i < values.length;i += 1){
       int w = rectWidth/(values.length);
-      if (values[i] < 0) {
+      if (values[i] < 0 && values[i] > rectHeight/-4) {
+        fill(255,165,0);
+      }
+      if (values[i] <= rectHeight/-4) {
         fill(255,0,0);
       }
-      else{
+      if (values[i] >= 0 && values[i] < rectHeight/4) {
+        fill(255,255,0);
+      }
+      if (values[i] >= rectHeight/4) {
         fill(0,255,0);
       }
       rect(x+(i*w),y+(rectHeight/2)-values[i],
